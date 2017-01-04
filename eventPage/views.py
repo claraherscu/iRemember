@@ -16,7 +16,11 @@ def get_next_events_list(request):
     ID = request.GET.get('ID',0)
     events = models.get24HourEvents(ID)
     events_json = serializers.serialize("json", events)
-    return JsonResponse(events_json, safe=False)
+    response = JsonResponse(events_json, safe=False)
+    response.__setitem__('Access-Control-Allow-Origin', '*')
+    response.__setitem__('Access-Control-Allow-Credentials', 'true')
+    response.__setitem__('Access-Control-Allow-Methods', 'GET, POST')
+    return response
 
 
 def add_new_event(request):
