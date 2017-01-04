@@ -7,7 +7,7 @@ from django.utils import timezone
 
 def index(request):
     # return HttpResponse("response for example")
-    html = "<html><body><a href='http://127.0.0.1:8000/eventPage/getTodaysEvents/?ID=302184452'>get " \
+    html = "<html><body><a href='http://192.168.1.108:8000/eventPage/getTodaysEvents/?ID=302184452'>get " \
            "events</a></body></html>"
     return HttpResponse(html)
 

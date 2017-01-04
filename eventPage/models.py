@@ -40,3 +40,13 @@ def get24HourEvents(tz):
     eventsToReturn = eventsToReturn.filter(time__hour__gt = timezone.now().hour)
 
     return eventsToReturn.order_by('time')
+
+
+def addNewGroup(groupName, user):
+    group = Group(groupName, user)
+    group.save()
+
+
+def addNewUser(tz, name):
+    user = User(tz, name)
+    user.save()
