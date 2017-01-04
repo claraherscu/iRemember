@@ -15,4 +15,8 @@ def get_next_events_list(request):
     ID = request.GET.values()[0]
     events = models.get24HourEvents(ID)
     events_json = serializers.serialize("json", events)
-    return JsonResponse(events_json)
+    # return JsonResponse(events_json)
+    string = ''
+    for e in events:
+        string += e.name
+    return HttpResponse(string)
