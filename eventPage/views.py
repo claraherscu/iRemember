@@ -29,3 +29,14 @@ def add_new_event(request):
     user = request.GET.get('user', 0)
     models.newEvent(time, name, comment, sound, picture, recurrence, user)
     return HttpResponse()
+
+
+def add_new_group_event(request):
+    userGroup = request.GET.get('userGroup', '')
+    time = request.GET.get('time', timezone.now())
+    name = request.GET.get('name', '')
+    comment = request.GET.get('comment', '')
+    sound = request.GET.get('sound', '')
+    picture = request.GET.get('picture', '')
+    recurrence = request.GET.get('recurrence', '')
+    models.newUserGroupEvent(userGroup, time, name, comment, sound, picture, recurrence)
