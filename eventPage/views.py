@@ -54,3 +54,25 @@ def add_new_group_event(request):
     response.__setitem__('Access-Control-Allow-Methods', 'GET, POST')
     return response
 
+
+def create_new_group(request):
+    groupName = request.GET.get('groupName', '')
+    users_list = request.GET.getlist('ID')
+    for user in users_list:
+        models.addNewGroup(groupName, user)
+    response = HttpResponse('')
+    response.__setitem__('Access-Control-Allow-Origin', '*')
+    response.__setitem__('Access-Control-Allow-Credentials', 'true')
+    response.__setitem__('Access-Control-Allow-Methods', 'GET, POST')
+    return response
+
+
+def create_new_user(request):
+    tz = request.GET.get('ID', 0)
+    name = request.GET.get('name', '')
+    models.addNewUser(tz, name)
+    response = HttpResponse('')
+    response.__setitem__('Access-Control-Allow-Origin', '*')
+    response.__setitem__('Access-Control-Allow-Credentials', 'true')
+    response.__setitem__('Access-Control-Allow-Methods', 'GET, POST')
+    return response
