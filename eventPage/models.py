@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils import timezone
-import datetime
 
 class User(models.Model):
     tz = models.IntegerField(primary_key=True)
@@ -16,17 +15,28 @@ class Event(models.Model):
     recurrence = models.CharField(max_length=50)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
 
 def get24HourEvents(tz):
 
-    dayRecurring = Event.objects.filter(recurrence='Day')
-    weekRecurring = Event.objects.filter(recurrence='Week')
-    monthRecurring = Event.objects.filter(recurrence='Month')
-    yearRecurring = Event.objects.filter(recurrence='Year')
+    userEvents = Event.objects.filter(user=tz)
+
+    dayRecurring = userEvents.filter(recurrence='Day')
+    weekRecurring = userEvents.filter(recurrence='Week')
+    monthRecurring = userEvents.filter(recurrence='Month')
+    yearRecurring = userEvents.filter(recurrence='Year')
+    nonRecurring = userEvents.filter(recurrence='')
 
     # get only the recurring events that are in the next 24 hours:
-    trueDayRecurring = dayRecurring.filter(time__week_day = timezone.now().weekday())
+    trueDayRecurring = dayRecurring
     trueWeekRecurring = weekRecurring.filter(time__week_day = timezone.now().weekday())
+    trueMonthRecurring = monthRecurring.filter(time__day = timezone.now().day)
+    trueYearRecurring = yearRecurring.filter(time__day = timezone.now().day, time__month = timezone.now().month)
 
-    time_threshold = timezone.now() + datetime.timedelta(hours=24)
-    return Event.objects.filter(user=tz).filter(time__lt=time_threshold).filter(time__gt=timezone.now())
+    # get only what hasn't happened today yet:
+    eventsToReturn = trueDayRecurring | trueWeekRecurring | trueMonthRecurring | trueYearRecurring | nonRecurring
+    eventsToReturn = eventsToReturn.filter(time__hour__gt = timezone.now().hour)
+
+    return eventsToReturn.order_by('time')
