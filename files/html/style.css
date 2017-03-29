@@ -1,0 +1,357 @@
+body {
+    background: url("babkground.png") fixed no-repeat;
+    background-size:100% 100%;
+}
+
+h1
+{
+    font-family: Impact, Charcoal, sans-serif;
+    text-shadow: -5px 3px 3px white;
+    text-align: center;
+    font-size: 80pt;
+    position: relative;
+    bottom: -10px;
+    
+}
+
+h3
+{
+    color: green;
+}
+
+
+#myBackground
+{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#addEventScreenVertical{
+    float:left;
+    width: 10%;
+    text-align: center;
+    margin: 10px 0px 0px 30px;
+}
+
+
+
+#fullName
+{
+    font-size: 16px;
+    color: white;
+}
+
+#studies
+{
+    color: white;
+}
+
+#myId
+{
+    color: white;
+}
+
+#favoritePage
+{
+    color: #DF7401;
+}
+
+#interestingTitle
+{
+    color: yellow;
+    font-family: arial;
+}
+
+#interesting
+{
+    color: yellow;
+    font-style: italic;
+}
+
+
+#login
+{
+    font-size: 16pt;
+    width: 400px;
+    height: 250px;
+    border: 6px solid blue;
+    text-align: center
+}
+
+button
+{
+    /*font-family: "Tahoma";*/
+    /*color: white;*/
+    background: none;
+    /*text-align: center;*/
+    /*display: block;*/
+    /*margin: auto;*/
+    border: none;
+}
+
+.button2:hover
+{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+@font-face {
+    font-family: 'ArbelHagilda_Bold'; /*a name to be used later*/
+    src: url('ArbelHagilda_Bold.otf'); /*URL to font*/
+}
+
+
+#divVertical
+{
+    float: left;
+    width: 10%;
+    text-align: center;
+    margin: 10px 0px 0px 30px;
+}
+
+
+#div1
+{
+    font-family: 'ArbelHagilda_Bold';
+    /*//text-shadow: -5px 3px 3px white;*/
+    text-align: center;
+    font-size: 30pt;
+    /*position: relative;*/
+    float: left;
+    width: 80%;
+    width: 80%;
+    margin: 10px 0px 0px 0px;
+    /*margin: auto;*/
+    /*box-sizing: border-box;*/
+    /*//bottom: -10px;*/
+    /*alignment: center;*/
+}
+
+#addEventScreen
+{
+    font-family: 'ArbelHagilda_Bold';
+    /*//text-shadow: -5px 3px 3px white;*/
+    /*text-align: center;*/
+    font-size: 20pt;
+    /*position: relative;*/
+    float: left;
+    width: 80%;
+    margin: 10px 0px 0px 0px;
+}
+
+#divClock{
+    font-family: 'ArbelHagilda_Bold';
+    /*//text-shadow: -5px 3px 3px white;*/
+    text-align: center;
+    font-size: 40pt;
+    position: relative;
+    /*//bottom: -10px;*/
+}
+
+#eventForm
+{
+    /*font-size: 12pt;*/
+    /*height: 200px;*/
+    /*border-radius: 15px;*/
+    text-align: right;
+    /*position: absolute;*/
+    margin-right: 50px;
+    /*float:left;*/
+    /*width: 80%;*/
+    /*word-spacing: 10px;*/
+
+}
+
+#calculator
+{
+    font-size: 20pt;
+    width: 185px;
+    height: 180px;
+    border: 3px solid blue;
+    position: relative;
+}
+
+input
+{
+    /*border: 1px solid blue;*/
+    margin-right: 10px;
+    width: 50%;
+    background: none;
+    border: none;
+
+}
+
+tr{
+    text-align: center;
+    font-size: 20pt;
+    background-color: #EAE1CD;
+
+}
+
+table
+{
+    text-align: center;
+    margin: auto;
+    /*background-color: #EAE1CD;*/
+    /*border-spacing: 5px;*/
+    /*border-collapse: separate;*/
+}
+
+#buCalc
+{
+    color: white;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: black;
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+
+
+.select_menu {
+    width: 100px;
+    height: 28px;
+    background-color: buttonface;
+    border: 1px solid red;
+    border-radius: 10px;
+    color: red;
+}
+
+.text_menu {
+    width: 400px;
+    height: 28px;
+    background-color: buttonface;
+    border: 1px solid red;
+    border-radius: 10px;
+    color: blue;
+}
+
+
+
+
+* { box-sizing:border-box; }
+
+/* basic stylings ------------------------------------------ */
+/*body                 { background:url(http://scotch.io/wp-content/uploads/2014/07/61.jpg); }*/
+/*!*.container      {*!*/
+    /*!*font-family:'Roboto';*!*/
+    /*!*width:600px;*!*/
+    /*!*margin:30px auto 0;*!*/
+    /*!*display:block;*!*/
+    /*!*background:#FFF;*!*/
+    /*!*padding:10px 50px 50px;*!*/
+/*!*}*!*/
+/*h2       {*/
+    /*text-align:center;*/
+    /*margin-bottom:50px;*/
+/*}*/
+/*h2 small {*/
+    /*font-weight:normal;*/
+    /*color:#888;*/
+    /*display:block;*/
+/*}*/
+/*.footer     { text-align:center; }*/
+/*.footer a  { color:#53B2C8; }*/
+
+/* form starting stylings ------------------------------- */
+.group            {
+    position:relative;
+    margin-bottom:0px;
+}
+input               {
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    /*display:block;*/
+    width:300px;
+    border:none;
+    border-bottom:1px solid #FDF9D5;
+    opacity: 70;
+}
+/*input:focus         { outline:none; }*/
+
+/* LABEL ======================================= */
+label                {
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label        {
+    top:-20px;
+    font-size:14px;
+    color:#5264AE;
+}
+
+/*!* BOTTOM BARS ================================= *!*/
+/*.bar    { position:relative; display:block; width:300px; }*/
+/*.bar:before, .bar:after     {*/
+    /*content:'';*/
+    /*height:2px;*/
+    /*width:0;*/
+    /*bottom:1px;*/
+    /*position:absolute;*/
+    /*background:#5264AE;*/
+    /*transition:0.2s ease all;*/
+    /*-moz-transition:0.2s ease all;*/
+    /*-webkit-transition:0.2s ease all;*/
+/*}*/
+
+/*.bar:before {*/
+    /*left:50%;*/
+/*}*/
+/*.bar:after {*/
+    /*right:50%;*/
+/*}*/
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+}
+
+/*!* HIGHLIGHTER ================================== *!*/
+/*.highlight {*/
+    /*position:absolute;*/
+    /*height:60%;*/
+    /*width:100px;*/
+    /*top:25%;*/
+    /*left:0;*/
+    /*pointer-events:none;*/
+    /*opacity:0.5;*/
+/*}*/
+
+/*!* active state *!*/
+/*input:focus ~ .highlight {*/
+    /*-webkit-animation:inputHighlighter 0.3s ease;*/
+    /*-moz-animation:inputHighlighter 0.3s ease;*/
+    /*animation:inputHighlighter 0.3s ease;*/
+/*}*/
+
+/*!* ANIMATIONS ================ *!*/
+/*@-webkit-keyframes inputHighlighter {*/
+    /*from { background:#5264AE; }*/
+    /*to    { width:0; background:transparent; }*/
+/*}*/
+/*@-moz-keyframes inputHighlighter {*/
+    /*from { background:#5264AE; }*/
+    /*to    { width:0; background:transparent; }*/
+/*}*/
+/*@keyframes inputHighlighter {*/
+    /*from { background:#5264AE; }*/
+    /*to    { width:0; background:transparent; }*/
+/*}*/
+
+#saveEvent
+{
+    margin-right: 150px;
+}

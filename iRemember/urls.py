@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from eventPage import views
 
 urlpatterns = [
-    url(r'^eventPage/', include('eventPage.urls')),
+    url(r'^eventPage/getTodaysEvents/', views.get_next_events_list, name='events_list'),
+    url(r'^eventPage/newGroup/', views.create_new_group, name='newGroup'),
+    url(r'^eventPage/newUser/', views.create_new_user, name='newUser'),
+    url(r'^eventPage/newEvent/', views.add_new_event, name='addNewEvent'),
+    url(r'^eventPage/deleteEvent/', views.delete_event, name='deleteEvent'),
+    url(r'^eventPage/newGroupEvent/', views.add_new_group_event, name='addNewGroupEvent'),
+    url(r'^eventPage/getAllUsers/', views.get_all_users, name='getAllUsers'),
+    url(r'^eventPage/', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
 ]
